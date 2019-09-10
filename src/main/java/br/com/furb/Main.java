@@ -1,6 +1,7 @@
 package br.com.furb;
 
 import br.com.furb.lista5.Questao1;
+import br.com.furb.lista5.Questao2;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
@@ -11,7 +12,7 @@ import javafx.scene.Scene;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-		loadSimpleScreen(new Questao1(), primaryStage);
+		loadSimpleScreen(new Questao2(), primaryStage);
 	}
 
 	private void loadSimpleScreen(SimpleScreen screen, Stage primaryStage) {
@@ -26,6 +27,7 @@ public class Main extends Application {
 			}
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			screen.setStage(primaryStage);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

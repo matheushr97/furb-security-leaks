@@ -1,18 +1,17 @@
 package br.com.furb;
 
-import br.com.furb.lista5.Questao1;
-import br.com.furb.lista5.Questao2;
+import br.com.furb.trabalho1.Trabalho1;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.scene.Scene;
 
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-		loadSimpleScreen(new Questao2(), primaryStage);
+		loadSimpleScreen(new Trabalho1(), primaryStage);
 	}
 
 	private void loadSimpleScreen(SimpleScreen screen, Stage primaryStage) {

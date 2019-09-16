@@ -1,48 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <ChoiceBox id="choiceBox" fx:id="securityChoiceBox" layoutX="450.0" layoutY="50.0" prefWidth="150.0" />
-      <Text layoutX="450.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo da implementação" />
-      <Accordion layoutX="14.0" layoutY="89.0" prefHeight="237.0" prefWidth="575.0">
-        <panes>
-          <TitledPane text="Contador - CWE 606">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade" />
-                        <Text layoutX="14.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="contadorTxt" layoutX="14.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;num&gt;" />
-                        <TextField fx:id="quantidadeTextField" layoutX="94.0" layoutY="18.0" prefHeight="25.0" prefWidth="461.0" />
-                        <Button layoutX="432.0" layoutY="56.0" mnemonicParsing="false" onAction="#processarContagem" text="Processar contagem" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </TitledPane>
-          <TitledPane text="CWE 178">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-          <TitledPane text="CWE 179">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-        </panes>
-      </Accordion>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="614.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <ChoiceBox id="choiceBox" fx:id="securityChoiceBox" layoutX="439.0" layoutY="50.0" prefWidth="150.0" />
+    <Text layoutX="450.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo da implementação" />
+    <Accordion layoutX="14.0" layoutY="89.0" prefHeight="237.0" prefWidth="575.0">
+      <panes>
+        <TitledPane text="Contador - CWE 606">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade" />
+                <Text layoutX="14.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                  <font>
+                    <Font name="System Bold" size="12.0" />
+                  </font>
+                </Text>
+                <Text fx:id="contadorTxt" layoutX="14.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;num&gt;" />
+                <TextField fx:id="quantidadeTextField" layoutX="94.0" layoutY="18.0" prefHeight="25.0" prefWidth="461.0" />
+                <Button layoutX="432.0" layoutY="56.0" mnemonicParsing="false" onAction="#processarContagem" text="Processar contagem" />
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane text="CWE 178">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
+                <TextField layoutX="62.0" layoutY="11.0" prefWidth="200.0" />
+                <Button layoutX="309.0" layoutY="11.0" mnemonicParsing="false" text="Cadastrar" />
+                <Separator layoutX="-2.0" layoutY="44.0" prefWidth="575.0" />
+                <Text layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                <TableView layoutX="14.0" layoutY="53.0" prefHeight="102.0" prefWidth="543.0">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="541.0" text="Nome" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane text="CWE 179">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arquivo" />
+                <TextField layoutX="66.0" layoutY="11.0" prefWidth="491.0" />
+                <Separator layoutX="-2.0" layoutY="49.0" prefWidth="575.0" />
+                <TextField layoutX="14.0" layoutY="95.0" prefWidth="543.0" />
+                <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caminho completo:" />
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+      </panes>
+    </Accordion>
+  </children>
 </AnchorPane>

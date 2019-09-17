@@ -1,5 +1,8 @@
 package br.com.furb.trabalho1;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,6 +41,12 @@ public class Trabalho1 extends SimpleScreen {
 
 	@FXML
 	private TextField quantidadeTextField;
+	
+	@FXML
+	private TextField resultadoCaminhoTextField;
+	
+	@FXML
+	private TextField entradaCaminhoTextField;
 
 	@FXML
 	private Text contadorTxt;
@@ -125,6 +134,40 @@ public class Trabalho1 extends SimpleScreen {
 
 	private void cadastroSeguro(String nome) {
 		cadastro(nome, Pattern.compile("\\<script\\>", Pattern.CASE_INSENSITIVE));
+	}
+	
+	@FXML
+	private void okCaminho() {
+		caminho(entradaCaminhoTextField.getText());
+	}
+	
+	private void caminho(String path) {
+		Path p = Paths.get(path);
+		if (!Files.exists(p)) AlertUtil.error(String.format("Caminho informado não existe: %s", path)).show();
+		else {
+			if(vulnerable) {
+				caminhoVulnerable(path, p);
+			} else {
+				caminhoSeguro(p);
+			}
+		}
+	}
+	
+	private void caminhoVulnerable(String path, Path p) {
+		if (path.startsWith("C:/Windows")) {
+			AlertUtil.error("Caminho não pode iniciar com C:/Windows").show();
+		} else {
+			resultadoCaminhoTextField.setText(p.normalize().toAbsolutePath().toString());
+		}
+	}
+	
+	private void caminhoSeguro(Path path) {
+		Path pathWindows = Paths.get("C:", "Windows");
+		if (path.normalize().startsWith(pathWindows)) {
+			AlertUtil.error("Caminho não pode iniciar com C:/Windows").show();
+		} else {
+			resultadoCaminhoTextField.setText(path.normalize().toAbsolutePath().toString());
+		}
 	}
 
 }

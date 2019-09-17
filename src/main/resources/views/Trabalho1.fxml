@@ -13,11 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="614.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <ChoiceBox id="choiceBox" fx:id="securityChoiceBox" layoutX="439.0" layoutY="50.0" prefWidth="150.0" />
     <Text layoutX="450.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo da implementação" />
-    <Accordion layoutX="14.0" layoutY="89.0" prefHeight="237.0" prefWidth="575.0">
+    <Accordion layoutX="14.0" layoutY="86.0" prefHeight="237.0" prefWidth="575.0">
       <panes>
         <TitledPane text="Contador - CWE 606">
           <content>
@@ -42,7 +42,7 @@
               <children>
                 <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
                 <TextField fx:id="nameTextField" layoutX="62.0" layoutY="11.0" prefWidth="200.0" />
-                <Button onAction="#cadastrarNome" layoutX="309.0" layoutY="11.0" mnemonicParsing="false" text="Cadastrar" />
+                <Button layoutX="309.0" layoutY="11.0" mnemonicParsing="false" onAction="#cadastrarNome" text="Cadastrar" />
                 <Separator layoutX="-2.0" layoutY="44.0" prefWidth="575.0" />
                 <Text layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
                 <TableView fx:id="table" layoutX="14.0" layoutY="53.0" prefHeight="102.0" prefWidth="543.0">
@@ -58,10 +58,11 @@
           <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
+                <Button layoutX="473.0" layoutY="10.0" mnemonicParsing="false" onAction="#okCaminho" prefHeight="25.0" prefWidth="86.0" text="OK" />
                 <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arquivo" />
-                <TextField layoutX="66.0" layoutY="11.0" prefWidth="491.0" />
+                <TextField fx:id="entradaCaminhoTextField" layoutX="66.0" layoutY="11.0" prefHeight="25.0" prefWidth="394.0" />
                 <Separator layoutX="-2.0" layoutY="49.0" prefWidth="575.0" />
-                <TextField layoutX="14.0" layoutY="95.0" prefWidth="543.0" />
+                <TextField fx:id="resultadoCaminhoTextField" layoutX="14.0" layoutY="95.0" prefWidth="543.0" />
                 <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caminho completo:" />
               </children>
             </AnchorPane>

@@ -63,7 +63,7 @@ public class Trabalho1 extends SimpleScreen {
 
 	@FXML
 	private void initialize() {
-		String securityOptions[] = { "VulnerÃ¡vel", "Segura" };
+		String securityOptions[] = { "Vulnerável", "Segura" };
 
 		securityChoiceBox.setItems(FXCollections.observableArrayList(securityOptions));
 		securityChoiceBox.getSelectionModel().select(0);
@@ -97,7 +97,7 @@ public class Trabalho1 extends SimpleScreen {
 
 	private void contagemSegura(Long quantidade) {
 		if (quantidade > MAX_COUNT) {
-			AlertUtil.error(String.format("Valor excede o nÃºmero mÃ¡ximo de %d contagens", MAX_COUNT)).show();
+			AlertUtil.error(String.format("Valor excede o número máximo de %d contagens", MAX_COUNT)).show();
 		} else {
 			contagem(quantidade);
 		}

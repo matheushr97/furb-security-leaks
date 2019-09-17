@@ -5,6 +5,12 @@
     <groupId>br.com.furb</groupId>
     <artifactId>furb-security-leak</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
+    <properties>
+
+        <project.build.sourceEncoding>cp1252</project.build.sourceEncoding>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -21,6 +27,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.8.3</version>
                 <configuration>
+                    <vendor>FURB</vendor>
                     <mainClass>br.com.furb.Main</mainClass>
                 </configuration>
             </plugin>
